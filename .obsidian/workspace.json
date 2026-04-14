@@ -82,7 +82,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "SQL-Report-Optimizer-Demo",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -103,7 +103,8 @@
               "title": "書籤"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -212,7 +213,7 @@
       "bases:建立新的 base": false
     }
   },
-  "active": "fcc250aef53146d8",
+  "active": "0cbca52f4e33ccf2",
   "lastOpenFiles": [
     "新增 文字文件.txt",
     "MSSQL-Report-Optimizer-Demo",

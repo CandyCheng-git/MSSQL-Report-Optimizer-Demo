@@ -1,4 +1,4 @@
-# sql-report-optimizer-demo
+# MSSQL-Report-Optimizer-Demo
 
 A SQL Server reporting optimisation demo that shows the difference between:
 
