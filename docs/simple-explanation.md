@@ -23,8 +23,7 @@ So the project asks:
 ## The three approaches in this project
 
 ### 1. Baseline report  
-**English term:** `baseline query` / `raw transactional reporting`  
-**繁中:** 基準查詢 / 直接查原始交易表
+**Term:**  `baseline query` / `raw transactional reporting`  
 
 This is the most direct version.
 
@@ -42,8 +41,7 @@ It is like counting all receipts from scratch every time the manager asks for a 
 ---
 
 ### 2. First-pass optimisation  
-**English term:** `index tuning` / `query restructuring`  
-**繁中:** 索引優化 / 查詢重組
+**Term:** `index tuning` / `query restructuring`  
 
 The next idea is to improve the SQL query a bit:
 
@@ -58,8 +56,7 @@ But the benchmark showed something important:
 - the timing improved only a little
 - the **logical reads** did not decrease
 
-**English term:** `logical reads`  
-**繁中:** 邏輯讀取
+**Term:**  `logical reads`  
 
 That means SQL Server still had to touch almost the same amount of data.
 
@@ -69,8 +66,7 @@ Cleaner SQL is not always cheaper SQL.
 ---
 
 ### 3. Summary-table reporting  
-**English term:** `summary table` / `pre-aggregation`  
-**繁中:** 彙總表 / 預先彙總
+**Term:** `summary table` / `pre-aggregation`  
 
 This is where the stronger improvement came from.
 
@@ -96,8 +92,7 @@ Instead of counting all receipts every time, you prepare a daily summary sheet i
 
 ## What is incremental refresh?
 
-**English term:** `incremental refresh`  
-**繁中:** 增量更新
+**Term:**  `incremental refresh`  
 
 Incremental refresh means:
 
