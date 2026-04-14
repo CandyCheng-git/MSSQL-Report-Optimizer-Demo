@@ -214,6 +214,7 @@
   },
   "active": "fcc250aef53146d8",
   "lastOpenFiles": [
+    "新增 文字文件.txt",
     "MSSQL-Report-Optimizer-Demo",
     "docs/architecture-notes.md",
     "docs/before-after-results.md",
@@ -228,7 +229,6 @@
     "logs/07_incremental_2026-04-14T191110.pdf",
     "logs/06_sum_2026-04-14T191306.pdf",
     "logs/06_sum_2026-04-14T191040.pdf",
-    "logs/05_opt_2026-04-14T190401.pdf",
     "歡迎.md"
   ]
 }

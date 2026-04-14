@@ -1,0 +1,47 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Obsidian local workspace
+.obsidian/workspace.json
+.obsidian/graph.json
+.obsidian/app.json
+.obsidian/appearance.json
+.obsidian/core-plugins.json
+
+# Logs / exports / local benchmark artifacts
+logs/
+*.pdf
+*.log
+*.tmp
+
+# SQL Server / local database artifacts
+*.mdf
+*.ldf
+*.bak
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# .NET
+bin/
+obj/
+*.user
+*.suo
+
+# Environment / secrets
+.env
+.env.*
+appsettings.Development.json
+secrets.json
+
+# Node (only if added later)
+node_modules/
+
+# Archive files
+*.zip
