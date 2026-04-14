@@ -79,10 +79,19 @@ The project demonstrates:
 ├─docs
 │      architecture-notes.md
 │      before-after-results.md
+│      simple-explanation.md
 │
 └─scripts
         StoredProcedure_usp_refresh_daily_sales_summary.sql
 ```
+
+---
+
+## Simple explanation
+
+For a simpler explanation of the project in plain language, see:
+
+- [`docs/simple-explanation.md`](docs/simple-explanation.md)
 
 ---
 
@@ -300,12 +309,14 @@ Detailed notes are stored in:
 
 - `docs/before-after-results.md`
 - `docs/architecture-notes.md`
+- `docs/simple-explanation.md`
 
 These documents explain:
 - baseline query behaviour
 - first-pass optimisation results
 - why the first improvement was limited
 - why summary-table + incremental refresh produced a stronger result
+- how to explain the project in simpler language
 
 ---
 
