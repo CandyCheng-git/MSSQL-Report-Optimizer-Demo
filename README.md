@@ -1,35 +1,35 @@
 # MSSQL-Report-Optimizer-Demo
 
-A SQL Server reporting optimisation demo that shows the difference between:
+A SQL Server reporting optimisation demo that compares three approaches:
 
 - querying raw transactional tables
-- doing light query/index tuning
+- applying light query and index tuning
 - redesigning the reporting path with a summary table and incremental refresh
 
-This project was built to demonstrate practical backend and database judgement for a business reporting scenario, not just SQL syntax.
+This project is designed to show practical database and backend judgement for a business reporting problem, not just SQL syntax.
 
 ---
 
 ## Why this project exists
 
-A common backend problem is this:
+A common backend problem looks like this:
 
-> A business report works, but it becomes too expensive to recalculate from transactional tables every time users need it.
+> A business report works, but recalculating it from transactional tables every time becomes too expensive for frequent business use.
 
-A weak portfolio project would stop at:
+A weak project would stop at:
 - adding a few indexes
-- rewriting the query a bit
+- rewriting the SQL slightly
 - claiming the problem is solved
 
-This project does something more honest and more useful:
+This project takes a more realistic path:
 
 1. measure the baseline query
 2. test a first-pass optimisation
-3. verify whether it actually reduces SQL Server work
-4. if not, move to a reporting-oriented design
+3. verify whether SQL Server actually does less work
+4. if not, change the reporting design
 5. measure the result again
 
-That is much closer to real engineering work.
+That is closer to real engineering work.
 
 ---
 
@@ -53,15 +53,14 @@ The project demonstrates:
 
 - **SQL Server**
 - **SSMS**
-- T-SQL scripts
+- **T-SQL**
 - benchmark evidence using:
   - `SET STATISTICS TIME ON`
   - `SET STATISTICS IO ON`
-  - execution logs
 
 ---
 
-## Current project structure
+## Clean project structure
 
 ```text
 .
@@ -80,15 +79,6 @@ The project demonstrates:
 ├─docs
 │      architecture-notes.md
 │      before-after-results.md
-│
-├─logs
-│      03_slow_2026-04-14T190133.pdf
-│      05_opt_2026-04-14T190401.pdf
-│      06_sum_2026-04-14T191040.pdf
-│      06_sum_2026-04-14T191306.pdf
-│      07_incremental_2026-04-14T191110.pdf
-│      08_sum_2026-04-14T193353.pdf
-│      sp_referesh_daily_sales_sum_2026-04-14T191820.pdf
 │
 └─scripts
         StoredProcedure_usp_refresh_daily_sales_summary.sql
@@ -224,9 +214,9 @@ This first optimisation attempt only improved timing slightly and did **not** re
 
 That means SQL Server still performed almost the same underlying work.
 
-This is important, because it shows that:
-- query cleanup is not automatically real optimisation
-- starter indexes do not always solve the reporting cost
+This matters because it shows:
+- cleaner SQL is not automatically cheaper SQL
+- starter indexes do not always solve reporting cost
 - evidence should decide the next move
 
 ## Summary-table report
@@ -304,26 +294,24 @@ This is the part that makes the project credible.
 
 ---
 
-## Evidence files
+## Supporting documentation
 
-Supporting evidence is stored in:
+Detailed notes are stored in:
 
-- `logs/`
 - `docs/before-after-results.md`
 - `docs/architecture-notes.md`
 
-These logs capture SQL Server timing and I/O results for:
-- baseline query
-- first-pass rewrite
-- summary-table setup
-- incremental refresh
-- summary-table report
+These documents explain:
+- baseline query behaviour
+- first-pass optimisation results
+- why the first improvement was limited
+- why summary-table + incremental refresh produced a stronger result
 
 ---
 
 ## Future improvements
 
-The next logical extensions would be:
+Logical next extensions:
 
 - larger seed volumes
 - scheduled refresh automation
@@ -336,7 +324,8 @@ The next logical extensions would be:
 
 ## Why this matters for backend work
 
-A lot of backend work is not about inventing clever code.  
+A lot of backend work is not about inventing clever code.
+
 It is about recognising when the system is doing the wrong kind of work at runtime and changing the design so the workload becomes cheaper.
 
 That is what this project demonstrates.
